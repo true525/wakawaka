@@ -1,0 +1,17 @@
+name: Banner
+
+on: [push]
+
+jobs:
+
+  banner:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Install banner
+      run: sudo apt-get install sysvbanner
+        
+    - name: Run banner 
+      run: banner "Hello World!"
